@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロセス画面</title>
+  </head>
+  <body>
+    <div id="element" class="fade-out">
+      <br><br><br>
+      <span id="deviceName"></span>
+      <span class="typing" data-speed="10">openURL -I jigokudani.net</span><br>
+      <span class="output">　　HTTP/1.1 301 Moved Permanently</span><br>
+      <span class="output">　　Connection: keep-alive</span><br>
+      <span class="output">　　Content-Length: 162</span><br>
+      <span class="output">　　Server: Confidentiality</span><br>
+      <span class="output">　　Content-Type: text/html</span><br>
+      <span class="output">　　Location: https://jigokudani.net/</span><br>
+      <span class="output">　　X-GitHub-Request-Id: <span id="random"></span><br>
+      <span class="output">　　Accept-Ranges: bytes</span><br>
+      <span class="output">　　Date: <span id="datetime"></span><br>
+      <span class="output">　　Via: 1.1 varnish</span><br>
+      <span class="output">　　Age: 3</span><br>
+      <span class="output">　　X-Served-By: cache-nrt-rjtf7700037-NRT</span><br>
+      <span class="output">　　X-Cache: HIT</span><br>
+      <span class="output">　　X-Cache-Hits: 1</span><br>
+      <span class="output">　　X-Timer: S1712138147.801248,VS0,VE1</span><br>
+      <span class="output">　　Vary: Accept-Encoding</span><br>
+      <span class="output">　　X-Fastly-Request-ID: <span id="random_id"></span><br><br>
+      <span class="output">　　==&gt; Loading https://jigokudani.net/about/admin_console</span><br>
+      <span class="typing" data-speed="20">　　##########################################</span>
+      <!--<span class="animation"></span>
+      <span class="typing count1" data-num="100">0</span>
+      <span class="typing">%</span><br> -->
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  }
+
+  #element {
+    width: 1000%;
+    height: 10000px;
+    margin-left: -10px;
+    margin-top: -5px;
+  }
+
+  span {
+    color: rgb(0 255 0);
+  }
+
+  .fade-out {
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.2s ease-out; /* 2秒かけてフェードアウト */
+    background-color: rgb(0 0 0);
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .typing {
+    opacity: 0;
+    display: none;
+  }
+
+  .typing.active {
+    opacity: 1;
+  }
+
+  .output {
+    opacity: 0;
+    display: none;
+  }
+
+  .output.active {
+    opacity: 1;
+  }
+
+  .command {
+    display: block;
+  }
+</style>
+
+<script>
+  var userAgent = navigator.userAgent; // ユーザーエージェントを取得
+  var deviceSpan = document.getElementById('deviceName'); // span要素を取得
+  if (userAgent.match(/iPhone|iPad|iPod|Android/i)) { // スマートフォンの場合の処理
+    var typeElements = document.querySelectorAll(".typing");
+    var outputElements = document.querySelectorAll(".output");
+    var index = 0;
+    var count = 0;
+
+    function typingElement() {
+      if (index < typeElements.length) {
+        typeElements[index].style.display = "inline"; // 要素を表示
+      }
+    }
+    typingElement();
+
+    function typingElements() {
+      if (index < typeElements.length) {
+        typeElements[index].style.display = "inline"; // 要素を表示
+        var speed =
+          parseInt(
+            typeElements[index].getAttribute("data-speed") // 表示速度を取得
+          );
+          // ) + 200; // 表示速度に0.2秒を加える
+        index++; // 次の要素に進む
+        setTimeout(typingElements, speed); // 次の要素を表示するまで待つ
+      }
+    }
+
+    function commandElements() {
+      if (count < outputElements.length) {
+        var outputElement = outputElements[count];
+        outputElement.style.display = "inline"; // 要素を表示
+        outputElement.classList.add("command");
+        outputElement.classList.remove("output");
+        count++; // 次の要素に進む
+        setTimeout(commandElements, 30); // 次の要素を表示するまで待つ（0.4秒）
+      } else {
+        typingElements();
+      }
+    }
+    setTimeout(function() {
+      commandElements();
+    }, 500);
+
+    window.onload = function () {
+      var element = document.getElementById("element");
+      setTimeout(function () {
+        element.classList.add("hidden");
+      }, 1500); // 2秒後にhiddenクラスを追加してフェードアウトを開始
+    };
+
+    const typeTarget = document.querySelectorAll(".typing");
+
+    let options = {
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    let callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0.5 &&　entry.target.classList.contains("active") == false) {
+          let typeContent = entry.target.textContent;
+          let typeSprit = typeContent.split("");
+          let typeSpeed = entry.target.getAttribute("data-speed");
+          entry.target.textContent = "";
+          entry.target.classList.add("active");
+
+          let typeLength = 0;
+          let typeInterval = setInterval(() => {
+            if (typeSprit[typeLength] == undefined) {
+              clearInterval(typeInterval);
+              return false;
+            }
+            entry.target.textContent += typeSprit[typeLength];
+            typeLength++;
+          }, typeSpeed);
+        }
+      });
+    };
+
+    let observer = new IntersectionObserver(callback, options);
+    typeTarget.forEach((e) => {
+      observer.observe(e);
+    });
+
+    console.log("execute processing for mobile.");
+    deviceSpan.textContent = "　　unknown_mobile:~ guest$ ";  // スマートフォン向けの文字列を挿入
+  } else { // パソコンの場合の処理
+    var typeElements = document.querySelectorAll(".typing");
+    var outputElements = document.querySelectorAll(".output");
+    var index = 0;
+    var count = 0;
+
+    function typingElement() {
+      if (index < typeElements.length) {
+        typeElements[index].style.display = "inline"; // 要素を表示
+      }
+    }
+    typingElement();
+
+    function typingElements() {
+      if (index < typeElements.length) {
+        typeElements[index].style.display = "inline"; // 要素を表示
+        var speed =
+          parseInt(
+            typeElements[index].getAttribute("data-speed") // 表示速度を取得
+          );
+          // ) + 200; // 表示速度に0.2秒を加える
+        index++; // 次の要素に進む
+        setTimeout(typingElements, speed); // 次の要素を表示するまで待つ
+      }
+    }
+
+    function commandElements() {
+      if (count < outputElements.length) {
+        var outputElement = outputElements[count];
+        outputElement.style.display = "inline"; // 要素を表示
+        outputElement.classList.add("command");
+        outputElement.classList.remove("output");
+        count++; // 次の要素に進む
+        setTimeout(commandElements, 30); // 次の要素を表示するまで待つ（0.4秒）
+      } else {
+        typingElements();
+      }
+    }
+    setTimeout(function() {
+      commandElements();
+    }, 450);
+
+    window.onload = function () {
+      var element = document.getElementById("element");
+      setTimeout(function () {
+        element.classList.add("hidden");
+      }, 1800); // 1.8秒後にhiddenクラスを追加してフェードアウトを開始
+    };
+
+    const typeTarget = document.querySelectorAll(".typing");
+
+    let options = {
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    let callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0.5 &&　entry.target.classList.contains("active") == false) {
+          let typeContent = entry.target.textContent;
+          let typeSprit = typeContent.split("");
+          let typeSpeed = entry.target.getAttribute("data-speed");
+          entry.target.textContent = "";
+          entry.target.classList.add("active");
+
+          let typeLength = 0;
+          let typeInterval = setInterval(() => {
+            if (typeSprit[typeLength] == undefined) {
+              clearInterval(typeInterval);
+              return false;
+            }
+            entry.target.textContent += typeSprit[typeLength];
+            typeLength++;
+          }, typeSpeed);
+        }
+      });
+    };
+
+    let observer = new IntersectionObserver(callback, options);
+    typeTarget.forEach((e) => {
+      observer.observe(e);
+    });
+
+    console.log("execute processing for PC.");
+    deviceSpan.textContent = "　　unknown_computer:~ guest$ "; // PC向けの文字列を挿入
+  }
+
+  // カウントアップ
+  function countUp() {
+    const shuffleNumberCounter = (target) => {
+      const targetNum = Number(target.getAttribute("data-num"));
+      if (!targetNum) {
+        return;
+      }
+
+      let counterData = null;
+      const speed = 20 / targetNum;
+      let initNum = 0;
+
+      const countUp = () => {
+        if (Number.isInteger(targetNum)) {
+          target.innerHTML = initNum;
+        } else {
+          target.innerHTML = `${initNum}.${Math.floor(Math.random() * 9)}`;
+        }
+        initNum++;
+        if (initNum > targetNum) {
+          target.innerHTML = targetNum;
+          clearInterval(counterData);
+        }
+      };
+      counterData = setInterval(countUp, speed);
+    };
+
+    const observeCountUp = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0.5) {
+          const numbersElement = entry.target.nextElementSibling;
+          if (numbersElement && numbersElement.classList.contains("count1")) {
+            shuffleNumberCounter(numbersElement);
+            observer.unobserve(entry.target);
+          } else if (numbersElement && numbersElement.classList.contains("count2")) {
+            shuffleNumberCounter(numbersElement);
+            observer.unobserve(entry.target);
+          }
+        }
+      });
+    };
+
+    const animationElements = document.querySelectorAll(".animation");
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+    const animationObserver = new IntersectionObserver(
+      observeCountUp,
+      observerOptions
+    );
+
+    animationElements.forEach((element) => {
+      animationObserver.observe(element);
+    });
+  }
+
+  var countElements1 = document.querySelector(".count1");
+  var countElements2 = document.querySelector(".count2");
+
+  if (countElements1) {
+    countUp();
+  } else if (countElements2) {
+    countUp();
+  }
+
+
+  function getCurrentDateTime() {
+    const now = new Date();
+    return now.toLocaleString(); // ローカルの日付と時間を返す
+  }
+  // HTMLに現在の日時を表示する
+  const datetimeElement = document.getElementById('datetime');
+  datetimeElement.textContent = getCurrentDateTime();
+
+
+  // 乱数生成
+  function generateRandomValue(digits) {
+    let randomValue = Math.random();
+    let scaledValue = Math.floor(randomValue * 10 ** digits)
+    return scaledValue.toString().padStart(digits, '0');
+  }
+
+  function generateRandomValueWithColons() { // コロンで区切られたランダムな値を生成する関数
+    let formattedValue = [
+      generateRandomValue(4), // 4桁のランダムな値を生成
+      generateRandomValue(6), // 6桁のランダムな値を生成
+      generateRandomValue(5), // 5桁のランダムな値を生成
+      generateRandomValue(5), // 5桁のランダムな値を生成
+       generateRandomValue(7)  // 7桁のランダムな値を生成
+    ].join(':'); // コロンで結合する
+    return formattedValue;
+  }
+  var randomValue = generateRandomValueWithColons(); // ランダムな値を生成
+  var deviceSpans = document.getElementById('random');
+  deviceSpans.textContent = randomValue;
+
+  function generateRandomAlphaNumeric(length) {
+    var characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+      for (let i = 0; i < length; i++) {
+        var randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+      }
+    return result;
+  }
+  var randomValue2 = generateRandomAlphaNumeric(32);
+  var deviceSpans2 = document.getElementById('random_id');
+  deviceSpans2.textContent = randomValue2;
+</script>

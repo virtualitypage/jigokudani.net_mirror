@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /post.html
+Disallow: /diary.html
+Disallow: /news.html
+Sitemap: https://jigokudani.net/sitemap.xml

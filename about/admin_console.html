@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Admin Console</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-8733534635553152">
+    <link rel="stylesheet" type="text/css" href="../css/admin_console.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F00MC1WG8L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F00MC1WG8L');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8733534635553152" crossorigin="anonymous"></script>
+    <style>
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .visible {
+        opacity: 1;
+      }
+      iframe, #mainContent {
+        width: 100%;
+      }
+      #process {
+        position: absolute;
+      }
+      .hide {
+        opacity: 0;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="process" src="../process.html" frameborder="0" scrolling="no" allow="fullscreen" title="processing"></iframe>
+    <div id="fadeInElement" class="hide">
+      <header class="head">
+        <div class="head_wrap">
+          <a href="">
+            <img class="logo" src="../img/jigokudani.webp" alt="地獄谷">
+          </a>
+          <nav class="global-nav">
+            <button class="nav_toggle-menu" type="button">
+              menu
+            </button>
+            <ul class="nav_wrap">
+              <li class="nav_menu">
+                <a href="../index">
+                  <span class="nav_text">Home</span>
+                </a>
+              </li>
+              <li class="nav_menu">
+                <a href="../about">
+                  <span class="nav_text">About</span>
+                </a>
+              </li>
+              <li class="nav_menu">
+                <a href="../site-map">
+                  <span class="nav_text">Site map</span>
+                </a>
+              </li>
+              <li class="nav_menu">
+                <a href="../release_note">
+                  <span class="nav_text">Release</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <script src="../js/main.js"></script>
+        <div class="margin-0 outerMargin-top makeScrollable outerMargin md:outerMargin overscroll-contain bgColor-opacity">
+          <div class="mx-auto">
+            <div class="container mx-auto sm:tableMargin textColor">
+              <h2 class="title-while titleSize fontSemibold">Admin Console</h2>
+              <div class="makeScrollable">
+                <table class="table-minWidth100 table-textSize">
+                  <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                  </colgroup>
+                  <thead class="thead-bgColor">
+                    <tr class="tr-textLeft">
+                      <th class="cellSize">No.</th>
+                      <th class="cellSize">STORE_NAME</th>
+                      <th class="cellSize">MODIFIED</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">1</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/akihisa">
+                          <p>串揚げ居酒屋 秋久</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/3/27</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">2</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/miki">
+                          <p>味希 野田阪神店</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/13</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">3</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/zen">
+                          <p>串焼きダイニング 善</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/6/7</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">4</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/stand-sakaba_maharo">
+                          <p>スタンド酒場 まはろ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">5</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/koshou">
+                          <p>粉匠</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/12</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">6</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/yagi-chan">
+                          <p>海鮮居酒屋 やぎちゃん</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">7</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/tousen">
+                          <p>中川酒造 透泉</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">更新予定無し</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">8</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/pagu_chan">
+                          <p>立呑 ぱぐちゃん</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">9</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/otahuku">
+                          <p>お多福</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/14</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">10</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/senior_club">
+                          <p>シニア倶楽部 遊時</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">11</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/snack_saki">
+                          <p>スナック咲</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">更新予定無し</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">12</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/kokure">
+                          <p>立吞みコクレ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/6/1</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">13</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/stand_toyo">
+                          <p>スタンド とよ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/6/1</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">14</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/sakaba_karon">
+                          <p>酒場カロン</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/14</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">15</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/maruei">
+                          <p>マルエイ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/13</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">16</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/sakura_next">
+                          <p>桜ねくすと</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/13</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">17</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/anteena">
+                          <p>アンティーナ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/13</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">18</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/hokkoriba-ru_hoshiboshi">
+                          <p>ほっこりばーる ほしぼし</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/12</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">19</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/gyouza_sankaku">
+                          <p>餃子さんかく</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/6/1</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">20</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/asobi-bar_aira">
+                          <p>遊びBAR アイラ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">更新予定無し</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">21</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/bar_hanare">
+                          <p>BARハナレ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">更新予定無し</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">22</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/ichimaru_ramen">
+                          <p>いちまるらーめん</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/14</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">23</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/sakaba_daigaku">
+                          <p>酒場ダイガク</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">24</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/tetsukabuto">
+                          <p>炭火焼鳥 鉄カブト</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">25</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/the_zoo">
+                          <p>THE ZOO</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">更新予定無し</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">26</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/wataru">
+                          <p>天ぷらとお出汁 渉</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">27</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/soyogi_an">
+                          <p>そよぎ庵</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/12</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">28</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/move_on">
+                          <p>move on</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">〜2023/8/30</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">29</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/goemon">
+                          <p>五右衛門</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/6/1</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">30</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/karaoke-bar_tsu-yan">
+                          <p>jigokudani karaoke bar つーやん</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">31</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/nomidokoro_nagomi">
+                          <p>呑処 なごみ</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">32</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/kitchen_725">
+                          <p>キッチン725</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/12</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">33</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/shiragiku">
+                          <p>おとーり酒場　白菊</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">34</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/utanoya">
+                          <p>うたのや</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">35</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/snack_ai">
+                          <p>スナック 愛</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">更新予定無し</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">36</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/shuen_yururi">
+                          <p>酒縁　ゆるり</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/14</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">37</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/kouhuku">
+                          <p>こうふく</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">38</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/kushiyaki_tsu-tan">
+                          <p>地獄谷つーたん</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2023/9/9</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">39</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/meido_bar">
+                          <p>地獄谷冥土バー</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2024/5/12</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">40</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/terimi">
+                          <p>照味</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">41</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/R">
+                          <p>R</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">42</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/bar_masquerade">
+                          <p>バー・マスカレード</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Enable">
+                          <span class="statusBatch-textColor">2023/6/3</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr class="borderLine borderColor bgColor">
+                      <td class="cellSize">
+                        <p class="number">43</p>
+                      </td>
+                      <td class="cellSize">
+                        <a class="link" href="https://jigokudani.net/about/fermata">
+                          <p>イタリア料理店　カフェレストラン　fermata</p>
+                        </a>
+                      </td>
+                      <td class="cellSize">
+                        <span class="fontSemibold roundedCorner status statusBatch statusBatch-Disable">
+                          <span class="statusBatch-textColor">YYYY/MM/DD</span>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <div class="foot">💀 2024 Hell Valley</div>
+        </footer>
+      </main>
+    </div>
+    <script>
+      function setIframeHeight() {
+        // プロセス画面サイズの自動調整
+        var iframe = document.getElementById("process");
+        var windowHeight = window.innerHeight;
+        iframe.style.height = windowHeight + "px";
+        var windowWidth = window.innerWidth;
+        iframe.style.width = windowWidth + "px";
+      }
+      setIframeHeight();
+
+      function hideIframe() {
+        var iframe = document.getElementById("process");
+        iframe.classList.add("hide");
+      }
+      window.onload = function () {
+        var iframe = document.getElementById("process");
+        iframe.onload = function () {
+          hideIframe();
+          var mainContent = document.getElementById("mainContent");
+          mainContent.classList.add("visible");
+        };
+      };
+
+      var userAgent = navigator.userAgent; // ユーザーエージェントを取得
+      if (userAgent.match(/iPhone|iPad|iPod|Android/i)) { // スマートフォンの場合の処理
+        function fadeIn() {
+          var fadeInElement = document.getElementById("fadeInElement"); // indexの内容をフェードインで表示
+          fadeInElement.classList.remove("hide");
+          fadeInElement.classList.add("fade-in");
+        }
+        setTimeout(fadeIn, 1500);
+      }
+      else { // パソコンの場合の処理
+        function fadeIn() {
+          var fadeInElement = document.getElementById("fadeInElement"); // indexの内容をフェードインで表示
+          fadeInElement.classList.remove("hide");
+          fadeInElement.classList.add("fade-in");
+        }
+        setTimeout(fadeIn, 1800);
+      }
+    </script>
+  </body>
+</html>

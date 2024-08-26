@@ -1,0 +1,522 @@
+/* =========================================================
+animation
+========================================================= */
+
+.snow { /* 雪の色とループ */
+  position: fixed;
+  background-color: rgb(255 255 255); /* 色 */
+  border-radius: 50%; /* 雪の形を丸にする */
+  animation: animate-snow 20s linear; /* アニメーションでループ */
+}
+
+@keyframes animate-snow { /* 画面からの降り始めと画面から消える時の設定 */
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100vh;
+  }
+}
+
+/* =========================================================
+neon
+========================================================= */
+
+x-sign {
+  --interval: 3s;
+  display: block;
+  text-shadow:
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+}
+
+x-sign {
+  font-weight: bold;
+  font-size: 25px;
+  margin: 20px auto;
+  color: yellow;
+  --color1: yellow;
+  --color2: lime;
+  --color3: green;
+  --color4: darkgreen;
+  font-family: Monoton;
+}
+
+@keyframes flicker {
+  50% {
+    color: white;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  x-sign {
+    --interval: 1s;
+    display: block;
+    text-shadow:
+      0 0 10px var(--color1),
+      0 0 20px var(--color2),
+      0 0 40px var(--color3),
+      0 0 80px var(--color4);
+    will-change: filter, color;
+    filter: saturate(60%);
+    animation: flicker steps(100) var(--interval) 1s infinite;
+  }
+  x-sign {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px auto 30px;
+    color: yellow;
+    --color1: yellow;
+    --color2: lime;
+    --color3: green;
+    --color4: darkgreen;
+    font-family: Monoton;
+  }
+
+  @keyframes flicker {
+    50% {
+      color: white;
+      filter: saturate(200%) hue-rotate(20deg);
+    }
+  }
+}
+
+/* =========================================================
+main
+========================================================= */
+
+main {
+  padding-top: 35px;
+  overflow: hidden;
+}
+
+/* 通常 */
+.cm-s-default {
+  color: rgb(255 255 255);
+  text-shadow: 0 0 2px #100c0f,0 0 35px #ffffff44,0 0 5px white,0 0 2px white;
+}
+
+code[class] {
+  color: rgb(255 255 255);
+  text-shadow: 0 0 2px #100c0f,0 0 35px #ffffff44,0 0 5px white,0 0 2px white;
+}
+
+/* ハロウィン仕様 */
+/* .cm-s-default {
+  color: rgb(255, 123, 0);
+  text-shadow: 0 0 20px rgb(255, 123, 0),0 0 35px rgb(255, 123, 0),0 0 5px rgb(255, 123, 0),0 0 50px darkorange;
+}
+code[class] {
+  color: rgb(255, 123, 0);
+  text-shadow: 0 0 20px rgb(255, 123, 0),0 0 35px rgb(255, 123, 0),0 0 5px rgb(255, 123, 0),0 0 50px darkorange;
+} */
+
+.message {
+  font-size: 10px;
+  line-height: 15px;
+}
+
+.messageTarget {
+  font-size: 13px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.detailArea {
+  width: 80%;
+  margin: 8% auto 10px;
+}
+
+details {
+  border: 1px solid rgb(170 170 170);
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  background-color: rgb(0 0 0);
+  color: rgb(255 255 255);
+  font-size: 15px;
+}
+
+details[open] {
+  padding: 0.5em;
+  background-color: rgb(0 0 0);
+  color: rgb(255 255 255);
+  font-size: 15px;
+}
+
+details[open] summary {
+  border-bottom: 1px solid rgb(170 170 170);
+  margin-bottom: 0.5em;
+}
+
+.introduction {
+  /* margin: 10% auto 0; */
+  width: 100%;
+  /* padding: 0 0 20vw; */
+  position: relative;
+}
+
+.introduction p {
+  color: rgb(255 255 255);
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hero {
+  max-width: 800px;
+  margin: 5vw auto 0vw;
+}
+
+.hero .map {
+  margin: 0 auto;
+  width: 92%;
+}
+
+@media screen and (min-width: 769px) {
+  main {
+    padding-top: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+  }
+
+  .message {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .messageTarget {
+    font-size: 18px;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .detailArea {
+    width: 80%;
+    margin: -40px auto 20px;
+    padding: 30px 0 5px;
+  }
+
+  details {
+    border: 1px solid rgb(170 170 170);
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+  }
+
+  summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    color: rgb(255 255 255);
+    font-size: 15px;
+  }
+
+  details[open] {
+    padding: 0.5em;
+    color: rgb(255 255 255);
+    font-size: 15px;
+  }
+
+  details[open] summary {
+    border-bottom: 1px solid rgb(170 170 170);
+    margin-bottom: 0.5em;
+  }
+
+  .introduction {
+    margin: -60px auto -30px;
+    padding: 55px 0 5px;
+  }
+
+  .introduction p {
+    line-height: 2.2;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .hero {
+    margin: 75px auto 5px;
+  }
+
+  .hero .map {
+    width: 666px;
+  }
+}
+
+/* =========================================================
+information
+========================================================= */
+
+marquee {
+  color: rgb(255 255 255);
+  background-color: rgb(155 0 255 / 0.5);
+  margin-top: 10px;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+article {
+  padding: 7% 0;
+}
+
+.btn-group {
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.btn-form {
+  font-weight: bold;
+  font-size: 13px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background-color: rgb(103 58 183);
+  box-shadow: 0px 0px 0px 2px #0a0a0a;
+  color: rgb(255 255 255);
+  border: solid 2px rgb(86 48 150);
+  border-top: solid 2px rgb(188 150 255);
+}
+
+.btn-form:hover {
+  background-color: rgb(103 58 183);
+}
+
+.btn-form:active {
+  box-shadow: 0px 0px 0px 2px rgb(255 255 255);
+}
+
+.btn-another_site {
+  font-weight: bold;
+  font-size: 13px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background-color: rgb(1, 211, 189);
+  color: rgb(255 255 255);
+  border: solid 2px rgb(0, 159, 143);
+  border-top: solid 2px rgb(203, 255, 250);
+  /* overflow: hidden; */
+  /* box-shadow: 0px 0px 20px 2px rgba(255,184,78,.6), 0px 0px 30px 2px rgba(1, 211, 189,.4); 金色仕上げ */
+  /* box-shadow: 0px 0px 20px 2px rgba(1, 211, 189, 0.6), 0px 0px 30px 2px rgba(1, 211, 189, 0.5); */
+  animation-name: rotate;
+  animation-duration: 0s; /* アニメーション周期所要時間。単位は秒(s)またはミリ秒(ms) */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; /* 無限に繰り返す */
+  animation-direction: normal; /* reverse => 逆方向 | normal => 順方向 */
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(10turn);
+  }
+}
+
+.btn-another_site:hover {
+  background-color: rgb(1, 211, 189);
+}
+
+.btn-another_site:active {
+  box-shadow: 0px 0px 0px 2px rgb(255 255 255);
+}
+
+.btn-admin_console {
+  font-weight: bold;
+  font-size: 13px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background-color: rgb(211 1 200);
+  color: rgb(255 255 255);
+  border: solid 2px rgb(165 0 196);
+  border-top: solid 2px rgb(255 203 240);
+  /* overflow: hidden; */
+  box-shadow: 0px 0px 20px 2px rgba(255,184,78,.6), 0px 0px 30px 2px rgba(1, 211, 189,.4); /* 金色仕上げ */
+  /* box-shadow: 0px 0px 20px 2px rgba(1, 211, 189, 0.6), 0px 0px 30px 2px rgba(1, 211, 189, 0.5); */
+  animation-name: rotate;
+  animation-duration: 0s; /* アニメーション周期所要時間。単位は秒(s)またはミリ秒(ms) */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; /* 無限に繰り返す */
+  animation-direction: normal; /* reverse => 逆方向 | normal => 順方向 */
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(10turn);
+  }
+}
+
+.btn-admin_console:hover {
+  background-color: rgb(211 1 200);
+}
+
+.btn-admin_console:active {
+  box-shadow: 0px 0px 0px 2px rgb(255 255 255);
+}
+
+@media screen and (min-width: 769px) {
+  marquee {
+    color: rgb(255 255 255);
+    background-color: rgb(155 0 255 / 0.5);
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  article {
+    padding: 3% 0;
+  }
+
+  .btn-group {
+    text-align: center;
+    margin: auto;
+    justify-content: space-evenly;
+    position: relative;
+  }
+}
+
+/* =========================================================
+shop list
+========================================================= */
+
+.shop-group {
+  max-width: 92%;
+  margin: 0 auto;
+}
+
+.shop-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop-list li {
+  margin-right: 4.348%;
+  margin-bottom: 7vw;
+  width: 47.826%;
+}
+
+.shop-list li:nth-child(2n) {
+  margin-right: 0;
+}
+
+.shop-list li a:hover {
+  opacity: 0.8;
+}
+
+.shop-list li dl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 7px 0;
+}
+
+.shop-list li dl dt {
+  color: rgb(255 255 255); /* 通常 */
+  /* color: orange; */ /* ハロウィン仕様 */
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 3px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.shop-list li dl dd {
+  background-color: rgb(0 0 255);
+  color: rgb(255 255 255);
+  font-size: 11px;
+  margin: 0 4px 4px 0;
+  padding: 5px 10px;
+}
+
+.line-break {
+  display: block; /* 画面サイズによって改行の有無を変更可能 ※「none」で無効化*/
+}
+
+.line-break_reverse {
+  display: none; /* 改行を無効化 */
+}
+
+.caution {
+  background-color: rgb(255 0 0);
+  color: rgb(255 255 255);
+  font-size: 11px;
+  margin: 0 4px 4px 0;
+  padding: 5px 10px;
+}
+
+.update {
+  background-color: rgb(27 202 0);
+  color: rgb(255 255 255);
+  font-size: 11px;
+  margin: 0 4px 4px 0;
+  padding: 5px 10px;
+}
+
+@media screen and (min-width: 769px) {
+  .shop-group {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .shop-group .shop-list li {
+    margin-right: 0.925%;
+    width: 19.26%;
+  }
+
+  .shop-group .shop-list li:nth-child(5n) {
+    margin-right: 0;
+  }
+
+  .shop-list li {
+    margin-bottom: 25px;
+  }
+
+  .shop-list li dl {
+    padding: 5px 7px 0;
+  }
+
+  .shop-list li dl dt {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .shop-list li dl dd {
+    padding: 6px 12px 5px;
+  }
+
+  .line-break {
+    display: none; /* 改行を無効化 */
+  }
+
+  .line-break_reverse {
+    display: block; /* 改行を有効化 */
+  }
+}

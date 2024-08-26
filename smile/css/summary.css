@@ -1,0 +1,89 @@
+/* =========================================================
+header
+========================================================= */
+
+.nav_menu_about a {
+  display: block;
+  padding: 0.9rem 0.3rem;
+  margin-left: 15px;
+  border-left: 4px solid transparent;
+}
+
+/* =========================================================
+main
+========================================================= */
+
+main {
+  display: block;
+  padding-top: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+.introduction {
+  margin: 50px auto 0;
+  width: 100%;
+  /* padding: 0 0 20vw; */
+  position: relative;
+}
+
+.introduction p {
+  color: rgb(255 255 255);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.unordered_list {
+  width: 100%;
+}
+
+.list_item {
+  color: rgb(255 255 255);
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 3px;
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  main {
+    padding-top: 120px;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+  }
+
+  .introduction {
+    margin: -60px auto 20px;
+    padding: 55px 0 5px;
+  }
+
+  .introduction p {
+    line-height: 2.2;
+    font-size: 15px;
+  }
+
+  .unordered_list {
+    width: 100%;
+  }
+
+  .list_item {
+    margin-bottom: 25px;
+    padding: 5px 7px 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 6px 0 5px;
+  }
+}
+
+/* =========================================================
+footer
+========================================================= */
+
+footer {
+  padding: 8px 0 30px;
+  text-align: center;
+}
